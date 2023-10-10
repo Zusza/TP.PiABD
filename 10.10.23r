@@ -1,0 +1,35 @@
+//<?PHP
+//Zad.1
+////phpinfo();
+//echo "Shay Patric Cormac"."<br>"."Jacob Frye";
+//$server = "localhost";
+//$uzytkownik = "root";
+//$haslo = "";
+//$baza = "przepisyPrzykład";
+//$con = new mysqli($server,$uzytkownik,$haslo,$baza);
+//
+//$zapytanie = "SELECT NazwaPrzepisu FROM przepisy ORDER BY NazwaPrzepisu DESC";
+//
+//if ($wynik = $con->query($zapytanie))
+// WHILE($row=$wynik->fetch_array())
+//  echo $row["NazwaPrzepisu"]."<br>";
+//else
+// echo $con->errno." ".$con->error;
+//$con->close(); //zamknięcie połącznia z bazą
+
+//Zad.2
+//$server = "localhost";
+//$uzytkownik = "root";
+//$haslo = "";
+//$baza = "ptaki";
+//$con = new mysqli($server,$uzytkownik,$haslo,$baza);
+//
+//$zapytanie = "SELECT nazwa_zwyczajowa FROM gatunki ORDER BY nazwa_zwyczajowa DESC";
+//
+//if ($wynik = $con->query($zapytanie))
+// WHILE($row=$wynik->fetch_array())
+//  echo $row["nazwa_zwyczajowa"]."<br>";
+//else
+// echo $con->errno." ".$con->error;
+//$con->close(); //zamknięcie połącznia z bazą
+//?>
