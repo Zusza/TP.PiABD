@@ -32,4 +32,5 @@
 //else
 // echo $con->errno." ".$con->error;
 //$con->close(); //zamknięcie połącznia z bazą
+
 //?>
