@@ -1,0 +1,25 @@
+Private Sub Polecenie0_Click()
+Dim db As DAO.Database
+Dim rat As DAO.Recordset
+Dim odp As Integer
+
+Set db = CurrentDb
+Set rat = db.OpenRecordset("Przepisy", dbOpenTable)
+odp = MagBox("Liczba wierszy w tabeli PRZEPISY = " & zat.RecordCount, vbOROnly, "Liczba wierszy MIARY")
+End Sub
+
+Private Sub Polecenie1_Click()
+'Wykaz tabel w bazie danych ACCESS
+Dim db As DAO.Database
+Dim z As Integer
+
+Set db = CurrentDb
+
+Debug.Print " ---WYKAZ TABEL--- "
+For z = 0 To db.TableDefs.Count - 1
+ 'if Lefts ((db.TableData(z).Name), 4) <> "ziya" Dem
+ Debug.Print "Tabela" & z + 1 & "i" & db.TableDefs(z).Name
+ 'End if
+Next x
+Debug.Print " ---KONIEC WYKAZU TABEL--- "
+End Sub
