@@ -1,0 +1,31 @@
+SELECT FROM - wybierz z bazy
+INSERT INTO - włóż do bazy
+UPDATE - zaktualizuj wartość
+
+PRIMARY KEY - klucz główny
+AUTO_INCREMENT - wykonuje funkcje automatyczne
+
+Baza Danych - ksiegarnia
+Ćw.1.1 - Aktualizowanie nazwiska w tabeli
+UPDATE klienci SET nazwisko="Psikuta" WHERE idklienta=4
+Ćw.2.1 - Zmienianie ID klienta -> Źle, nie da się
+UPDATE klienci SET idklienta=1 WHERE idklienta=3
+Ćw.3.1 - Zmiana ceny
+UPDATE ksiazki SET cena = ROUND(cena*1.1)
+Ćw.4.1 - Zmniejsz cene najdroższej książki o 10
+UPDATE ksiazki SET cena=cena-10 ORDER BY DESC LIMIT 1
+Ćw.5.1 - Zmień imię i nazwisko
+UPDATE klienci SET imie="Joanna", nazwisko="Dostojewska" WHERE idklienta=10
+Ćw.6.1 - Zmień status zamówień nr 4 i 5 na "wyslano"
+UPDATE zamowienia set status="wyslano" WHERE idzamowienia BETWEEN 4 AND 5
+
+Ćw.1.2 - Dodaj nowego klienta do bazy: Franciszek Janowski z Chorzowa
+INSERT INTO klienci VALUES (NULL, "Franciszek", "Janowski", "Chorzów")
+Ćw.2.2 - Dodaj zamówienie do bazy
+INSERT INTO zamowienia (idzamowienia, data, status, idklienta, idksiazki) VALUES (NULL, "2016-01-01", "oczekiwanie",7,3)
+Ćw.3.2 - Dodaj książke ale nie podawaj autora
+INSERT INTO ksiazki(isksiazki, nazwiskoautora,tytul) VALUES (NULL, "Grebosz", Symfonia C++")
+Ćw.4.2 - Dodaj 2 klientów za pomocą 1 zapytania
+INSERT INTO klienci VALUES (NULL, "Marilyn", "Monroe", "Los Angeles"), ("Marek", "Nonejm", "Żabka")
+Ćw.5.2 - Dodaj klienta za pomocą innej metody
+INSERT INTO klienci SET idklienta=NULL, imie="Steven", nazwisko="McQueen", miejscowosc="Los Angeles"
