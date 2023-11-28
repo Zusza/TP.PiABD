@@ -1,0 +1,25 @@
+Zad.1 - Znajdź w bazie książki ułożone alfabateycznie wg tytułu.
+SELECT ksiazki.tytul FROM ksiazki ORDER BY ksiazki.tytul DESC;
+Zad.2 - Znajdź najdroższą książke w bazie
+SELECT * FROM ksiazki ORDER BY ksiazki.cena DESC LIMIT 1;
+Zad.3 - Znajdź wszystkie wysłanie zamównienia
+SELECT * FROM zamowienia WHERE zamowienia.status = "wyslano"; 
+Zad.4 - Znajdź wszytkich klientów o nazwisku Rutkowski
+SELECT * FROM klienci WHERE klienci.nazwisko ="Rutkowski";
+Zad.5 - Znajdź książki zawierające "PHP" w tytule
+SELECT * FROM ksiazki WHERE ksiazki.tytul LIKE '%PHP%'
+Zad.6 - Znajdź zamowienia od ostatnio dokonanego.
+
+Zad.7 - Dla wszystkich zamówień podaj imie, nazwisko, date i ID zamawiającego.
+SELECT klienci.imie, klienci.nazwisko, zamowienia.data, zamowienia.idklienta FROM zamowienia, klienci WHERE zamowienia.idklienta=klienci.idklienta
+
+Zad.8 - To co w 7 ale z AS
+SELECT klienci.imie AS Imie, klienci.nazwisko AS Nazwisko, zamowienia.data AS Data, zamowienia.idklienta AS ID FROM zamowienia, klienci WHERE zamowienia.idklienta=klienci.idklienta
+
+Zad.9 - Podaj imiona i nazwiska osób które zamówiły książke nr 2
+
+
+Zad.10 - Jakie książki (tytuł, autor) zmaówił Jan Nowak
+SELECT ksiazki.tytul, ksiazki.imieautora, ksiazki.nazwiskoautora FROM ksiazki, klienci, zamowienia WHERE ksiazki.idksiazki = zamowienia.idksiazki AND zamowienia.idklienta = klienci.idklienta AND klienci.imie = "Jan" AND klienci.nazwisko = "Nowak";
+
+Zad.11 - Znajdź zamówienia dokonane przez osobę o nazwisku Rutkowski ułożne wg daty od najnowszych. Imie i nazwkisko, id, data, status zamówienia i tytuł ksiażki
