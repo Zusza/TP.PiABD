@@ -6,3 +6,9 @@ INSERT INTO studenci (IDstudenta) VALUES (NULL)...
 
 2.Jeden z naszych pracowników, Tim Smith, chciałby zacząć u nas studiować. Utwórz nowy rekord studenta na podstawie 
 informacji w jego rekordzie jako pracownika.
+
+BD -> agencja artystyczna
+1.Agentka Marianne Wier chciałaby zrealizować kilka występów dla siebie, utwórz więc dla niej nowy rekord 
+klienta przez skopiowanie odpowiednich pól z tabeli agentów.
+
+2.Dodaj "New Age" do listy stylów muzycznych
