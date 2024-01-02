@@ -1,0 +1,8 @@
+BD -> grafik uczelni
+1.Angel Kennedy chce się zapisać do naszej uczelni. Jej mąż John już u nas studiuje. Utwórz nowy rekord studenta dla Angel,
+korzystając z informacji zapisanych w rekordzie Johna.
+
+INSERT INTO studenci (IDstudenta) VALUES (NULL)...
+
+2.Jeden z naszych pracowników, Tim Smith, chciałby zacząć u nas studiować. Utwórz nowy rekord studenta na podstawie 
+informacji w jego rekordzie jako pracownika.
