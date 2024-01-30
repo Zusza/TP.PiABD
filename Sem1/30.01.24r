@@ -1,0 +1,5 @@
+1.Wypisz agentów którzy nie mają żadnych zleceń (nie mają imprez) BD: agencjaartystycznaprzyklad
+SELECT agenci.IDAgenta, agenci.ImieAgenta, agenci.NazwiskoAgenta
+FROM agenci
+LEFT JOIN imprezy ON agenci.IDAgenta = imprezy.IDAgenta
+WHERE imprezy.IDAgenta IS NULL;
