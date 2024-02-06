@@ -10,3 +10,18 @@ FROM klienci
 JOIN imprezy ON klienci.IDKlienta = imprezy.IDKlienta
 GROUP BY klienci.IDKlienta
 ORDER BY imprezy.DzienRozpoczecia DESC;
+
+Kartkówka 6.02.24r
+Zad.1
+SELECT wykonawcy.NazwaScenicznaWykonawcy, imprezy.DzienRozpoczecia, imprezy.DzienZakonczenia, imprezy.WartoscKontraktu
+FROM wykonawcy
+JOIN imprezy ON wykonawcy.IDWykonawcy = imprezy.IDWykonawcy
+WHERE imprezy.WartoscKontraktu >= 2000 
+AND imprezy.WartoscKontraktu < 5000
+ORDER BY imprezy.WartoscKontraktu DESC;
+Zad.2
+SELECT przedmioty.NazwaPrzedmiotu
+FROM przedmioty
+JOIN zajecia ON przedmioty.IDPrzedmiotu = zajecia.IDPrzedmiotu
+WHERE zajecia.PlanNaSrode = 0
+GROUP BY przedmioty.NazwaPrzedmiotu;
