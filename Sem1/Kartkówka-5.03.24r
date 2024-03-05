@@ -1,4 +1,4 @@
-Zad.1 - Wymień wszystkie przepisy i wszystkie składniki każdego przepisu dla takich przepisów, które zawierają "Owoce morza"
+Zad.1 - Wymień wszystkie przepisy i wszystkie składniki każdego przepisu dla takich przepisów, które zawierają "Owoce morza" BD: PrzepisyPrzyklad
 SELECT przepisy.NazwaPrzepisu, skladniki.NazwaSkladnika
 FROM przepisy
 JOIN skladniki_przepisow ON przepisy.IDPrzepisu = skladniki_przepisow.IDPrzepisu
@@ -6,7 +6,7 @@ JOIN skladniki ON skladniki.IDSkladnika = skladniki_przepisow.IDSkladnika
 JOIN kategorie_skladnikow ON kategorie_skladnikow.IDKategoriiSkladnika = skladniki.IDKategoriiSkladnika
 WHERE kategorie_skladnikow.OpisKategoriiSkladnika LIKE "Owoce morza"
 
-Zad.2 - Wypisz wszystkich klientów razem z szczegółami ostatniego zamówienia
+Zad.2 - Zrób liste klientów i wszystkich szczegółów dotyczących ich ostatniego zamówienia. BD: ZamowieniaPrzyklad
 SELECT klienci.ImieKlienta, klienci.NazwiskoKlienta, zamowienia.NumerZamowienia, zamowienia.DataZamowienia, zamowienia.DataWysylki, dane_zamowien.CenaZakupu, dane_zamowien.ZamowionaIlosc, produkty.NazwaProduktu
 FROM klienci 
 JOIN zamowienia ON klienci.IDKlienta = zamowienia.IDKlienta
