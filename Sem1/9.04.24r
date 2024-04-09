@@ -1,0 +1,20 @@
+Zad.1 - z kartkówki
+SELECT przepisy.NazwaPrzepisu, skladniki.NazwaSkladnika
+FROM przepisy 
+JOIN skladniki_przepisow ON przepisy.IDPrzepisu = skladniki_przepisow.IDPrzepisu
+JOIN skladniki ON skladniki.IDSkladnika = skladniki_przepisow.IDSkladnika
+WHERE przepisy.IDPrzepisu IN (SELECT przepisy.IDPrzepisu 
+                              FROM (skladniki_przepisow 
+                                    INNER JOIN skladniki ON skladniki_przepisow.IDSkladnika = skladniki.IDSkladnika)
+                                    INNER JOIN kategorie_skladnikow ON skladniki.IDKategoriiSkladnika = kategorie_skladnikow.IDKategoriiSkladnika
+                                    WHERE kategorie_skladnikow.OpisKategoriiSkladnika LIKE 'Owoce morza')
+
+BD: agencjaartystycznaprzyklad
+Zad.1 - Podaj wszystkich wykonawców oraz miasta, w których znajduje się ich siedziba i posortuj rezultaty rosnąco według miasta i nazwy wykonawcy.
+
+Zad.2 - Podaj daty występów, ale tak, żeby się nie powtarzały. Liczba występów odbywających się jednego dnia jest nieistotna.
+
+BD: grafikuczelniprzyklad
+Zad.3 - Czy możemy otrzymać kompletną informacje o zajęciach?
+
+Zad.4 - Podaj listę budynków kampusu oraz liczbę pięter w każdym budynku. Posortuj listę według budynków, rosnąco.
