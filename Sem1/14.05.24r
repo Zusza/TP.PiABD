@@ -1,7 +1,14 @@
-Zad.1 - Wypisz wszystkich klientów i wykonawców w jednej kolumnie a w drugiej napisz jaki to typ (klient czy wykonawca)
+Zad.1 - Wypisz wszystkich klientów i wykonawców w jednej kolumnie a w drugiej napisz jaki to typ (klient czy wykonawca). BD: agencjaartystyczna
 SELECT CONCAT(klienci.ImieKlienta, ' ', klienci.NazwiskoKlienta) AS nazwa, 'klient' AS typ
 FROM Klienci
 UNION
 SELECT wykonawcy.NazwaScenicznaWykonawcy, 'wykonawca' AS typ
 FROM wykonawcy
 ORDER BY 1 ASC;
+
+Zad.2 - Wyszukaj wykonawców, którzy występowali dla klientów o nazwiskach Berg lub Hallmark. BD: agencjaartystyczna
+SELECT DISTINCT(wykonawcy.NazwaScenicznaWykonawcy)
+FROM wykonawcy
+JOIN imprezy ON wykonawcy.IDWykonawcy = imprezy.IDWykonawcy
+JOIN klienci ON imprezy.IDKlienta = klienci.IDKlienta
+WHERE klienci.NazwiskoKlienta LIKE "Berg" OR "Hallmark";
