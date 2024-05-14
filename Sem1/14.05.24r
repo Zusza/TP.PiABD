@@ -12,3 +12,10 @@ FROM wykonawcy
 JOIN imprezy ON wykonawcy.IDWykonawcy = imprezy.IDWykonawcy
 JOIN klienci ON imprezy.IDKlienta = klienci.IDKlienta
 WHERE klienci.NazwiskoKlienta LIKE "Berg" OR "Hallmark";
+
+Zad.3 - Wypisz przepisy razem ze składnikami
+SELECT przepisy.NazwaPrzepisu, skladniki.NazwaSkladnika
+FROM przepisy
+JOIN skladniki_przepisow ON przepisy.IDPrzepisu = skladniki_przepisow.IDPrzepisu
+JOIN skladniki ON skladniki_przepisow.IDSkladnika = skladniki.IDSkladnika
+ORDER BY przepisy.NazwaPrzepisu ASC;
