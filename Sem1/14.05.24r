@@ -1,3 +1,4 @@
+Zad.1 - Wypisz wszystkich klientów i wykonawców w jednej kolumnie a w drugiej napisz jaki to typ (klient czy wykonawca)
 SELECT CONCAT(klienci.ImieKlienta, ' ', klienci.NazwiskoKlienta) AS nazwa, 'klient' AS typ
 FROM Klienci
 UNION
