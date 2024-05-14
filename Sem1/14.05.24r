@@ -1,0 +1,6 @@
+SELECT CONCAT(klienci.ImieKlienta, ' ', klienci.NazwiskoKlienta) AS nazwa, 'klient' AS typ
+FROM Klienci
+UNION
+SELECT wykonawcy.NazwaScenicznaWykonawcy, 'wykonawca' AS typ
+FROM wykonawcy
+ORDER BY 1 ASC;
