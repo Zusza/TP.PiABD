@@ -1,4 +1,8 @@
 Zad.1 - Dla wszystkich produktów w tabeli "produkty" wyznacz (oblicz) liczbę dostawców każdego produktu
+SELECT produkty.NazwaProduktu, COUNT(dostawcy_produktow.IDDostawcy) AS Liczba
+FROM dostawcy_produktow
+JOIN produkty ON dostawcy_produktow.NumerProduktu = produkty.NumerProduktu
+GROUP BY 1;
 
 Zad.2 - Podaj 3 największe liczby zamówień dla wszystkich kategorii produktów z tabeli "kategorie"
 SELECT kategorie.OpisKategorii, COUNT(dane_zamowien.NumerZamowienia) AS Ilosc
