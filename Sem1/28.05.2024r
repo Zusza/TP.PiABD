@@ -1,0 +1,8 @@
+Zad.2 - Podaj 3 największe liczby zamówień dla wszystkich kategorii produktów z tabeli "kategorie"
+SELECT kategorie.OpisKategorii, COUNT(dane_zamowien.NumerZamowienia) AS Ilosc
+FROM kategorie
+JOIN produkty ON kategorie.IDKategorii = produkty.IDKategorii
+JOIN dane_zamowien ON dane_zamowien.NumerProduktu = produkty.NumerProduktu
+GROUP BY kategorie.OpisKategorii
+ORDER BY Ilosc DESC
+LIMIT 3;
