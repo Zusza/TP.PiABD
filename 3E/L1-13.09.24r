@@ -1,0 +1,14 @@
+Zad.1
+SELECT klienci.StanZamKlienta AS StanKlienta, klienci.MiastoKlienta AS MiastoKlienta, COUNT(dane_zamowien.ZamowionaIlosc) AS LiczbaZamowien
+FROM klienci
+JOIN zamowienia ON klienci.IDKlienta = zamowienia.IDKlienta
+JOIN dane_zamowien ON zamowienia.NumerZamowienia = dane_zamowien.NumerZamowienia
+GROUP BY klienci.MiastoKlienta
+ORDER BY klienci.StanZamKlienta, klienci.MiastoKlienta, dane_zamowien.ZamowionaIlosc ASC;
+
+Zad.2
+SELECT NumerZamowienia AS Numer_zamowiena, NazwaProduktu AS Produkt, ZamowionaIlosc AS Ilosc, CenaZakupu AS Cena, (CenaZakupu * ZamowionaIlosc) AS Wartosc
+FROM produkty
+NATURAL JOIN dane_zamowien
+NATURAL JOIN zamowienia
+ORDER BY NumerZamowienia;
